@@ -1,0 +1,19 @@
+
+<t style="color:red">gyroLib</t>
+
+    GyroLib is a library that makes it simple to use a mems sensor.
+    
+    The library is structured in such a way that it is easy to add support
+    for different types of mems sensors, or for different platforms. And
+    every platform will be compatible with every sensor.
+    
+    <t style="color:lightblue">How it works</t>
+    
+    The library can read measurements from the mems sensor, and
+    calculate its rotation. It does this integrating every gyroscope
+    measurement. Then it continuously nudges the result towards the
+    rotation measured by the accelerometer.
+    
+    Rotations are represented a quaternion.
+        
+    <a href="https://github.com/maartenvanschagen/gyroLib">View on GitHub</a>

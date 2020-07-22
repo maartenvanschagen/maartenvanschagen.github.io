@@ -1,0 +1,13 @@
+
+--------------------------------help--------------------------------
+
+To navigate the website first type 'ls'.
+This will display the list of pages you can access.
+
+To access a page type 'cat' followed by a space and the name of the page.
+    Example: 'cat contact'
+This will show the specified page to the screen.
+
+If you get lost, type 'home' to go back to the homescreen.
+
+--------------------------------------------------------------------

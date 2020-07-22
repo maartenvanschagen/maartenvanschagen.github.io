@@ -1,0 +1,19 @@
+#                                                        
+#  To view my standard website, type 'viewer'
+#
+  
+
+Hello, this website is structured in a different manner then most websites.
+It is meant to look and feel like you are using a linux terminal.
+
+Commands:
+    ls          Prints out a list of pages you can access.
+    cat         Prints a page to the screen.
+    clear       Clears the screen.
+    help        Gives instructions on how to navigate.
+    home        Brings you back to this page.
+    viewer      Opens standard website.
+
+To enter commands, just start typing. Press enter to apply the command.
+
+For help, type 'help'.

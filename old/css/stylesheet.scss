@@ -1,0 +1,113 @@
+@import 'hamburger.scss', 'palette';
+
+html{
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+body{
+  margin: 0;
+  background-color: color(4);
+
+  .navigation{
+    $width: 90%;
+    width: $width;
+    background-color: color(1);
+    padding-left: (100%-$width)*.5;
+    padding-right: (100%-$width)*.5;
+    top: 0;
+    overflow: hidden;
+    position: sticky;
+    z-index: 1;
+    transition: all .4s ease;
+    @media(max-width:60em){
+      height: (14px * 2 + 28px);  //calculated height for menu, auto not available because of the animation
+      padding-left: 0px;
+      padding-right: 0px;
+      width: 100%;
+      &.opened{
+        height: (14px * 2 + 28px + (23px + 14px * 2) * 4);  //calculated height for menu, auto not available because of the animation
+        width: $width;
+        padding-left: (100%-$width)*.5;
+        padding-right: (100%-$width)*.5;
+      }
+    }
+
+    .nav-button{
+      cursor: pointer;
+      float: left;
+      position: relative;
+      display: block;
+      text-align: center;
+      padding: 14px 1em;
+      text-decoration: none;
+      font-size: 1.2em;
+      color: color(4);
+
+      @media(max-width:60em){
+        display: block;
+        width:calc(100% - 2em);
+        &.opened{
+          display: block;
+          width:calc(100% - 2em);
+        }
+      }
+
+      transition: all .4s ease;
+      &:hover, &:active, &:focus{
+        background-color: color(2);
+      }
+    }
+
+    .hamburger-icon{
+      display: none;
+      width: 35px; //may not be auto for animation
+      @media(max-width:60em){
+        display:block;
+      }
+    }
+
+    .icon{
+      transition: all 0s;
+      padding: 5px 5px;
+      font-size: 41px;
+      right:0px;
+      position: fixed;
+      display: block;
+      @media(max-width:60em){
+        animation: fadein .4s ease-in-out;  //animation runs on load   can't deal with this without removing support for all browsers  any fix seems to fail
+        &.opened{
+          animation: fadeout .3s ease-in-out;
+          opacity: 0;    //hide element
+          z-index: -100; //make element unclickable   is ugly but works amazingly well    any other way seems to fail
+        }
+      }
+    }
+  }
+
+  .content{
+    $width: 90%;
+    width: $width;
+    margin: 10px (100% - $width)/2 0 (100% - $width)/2;
+    height: 200%;
+    line-height:1.2;
+  }
+}
+
+@keyframes fadeout{
+  from{
+    opacity: 1;
+  }
+  to{
+    opacity: 0;
+  }
+}
+
+@keyframes fadein{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
